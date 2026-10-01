@@ -1,0 +1,770 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080b16;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(8, 11, 22, 0.75);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #00eaff;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #00eaff;
+}
+
+.nav-menu a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #00eaff;
+
+    transition: 0.3s;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.hero-text {
+    animation: slideLeft 1s ease;
+}
+
+.welcome {
+    color: #00eaff;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 70px);
+    margin-bottom: 10px;
+}
+
+.hero h1 span,
+.hero h2 span,
+.section-title span {
+    color: #00eaff;
+}
+
+.hero h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.typing {
+    border-right: 3px solid #00eaff;
+
+    animation:
+        typing 3s steps(15) infinite alternate,
+        blink 0.7s infinite;
+}
+
+.hero-text > p:not(.welcome) {
+    color: #b7bfd6;
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    background: #00eaff;
+    color: #061018;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 15px #00eaff,
+        0 0 35px rgba(0,234,255,0.5);
+}
+
+.btn.outline {
+    background: transparent;
+    color: #00eaff;
+
+    border: 2px solid #00eaff;
+}
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: 3px solid #00eaff;
+
+    /* Animasi */
+    animation: melayang 3s ease-in-out infinite;
+
+    box-shadow: 0 0 20px #00eaff;
+}
+
+/* Animasi naik turun */
+@keyframes melayang {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+}
+}
+
+.circle {
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle, #122d45, #080b16);
+
+    border: 3px solid #00eaff;
+
+    box-shadow:
+        0 0 30px #00eaff,
+        inset 0 0 30px rgba(0,234,255,0.4);
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+.person {
+    font-size: 150px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+
+    font-size: 40px;
+
+    margin-bottom: 60px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 60px;
+}
+
+.foto-kedua img {
+    width: 200px;
+    height: 200px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: 4px solid #00eaff;
+
+    box-shadow: 0 0 20px #00eaff;
+
+    animation: fotoGerak 3s ease-in-out infinite;
+
+    transition: 0.3s;
+}
+
+/* Animasi foto */
+@keyframes fotoGerak {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1.05);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Saat mouse diarahkan ke foto */
+.foto-kedua img:hover {
+    transform: scale(1.1);
+    box-shadow:
+        0 0 25px #00eaff,
+        0 0 50px #00eaff;
+}
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #b7bfd6;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.skill-card {
+    background: #101729;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.4s;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #00eaff;
+
+    box-shadow:
+        0 10px 35px rgba(0,234,255,0.15);
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #00eaff;
+    margin-bottom: 10px;
+}
+
+.progress {
+    width: 100%;
+    height: 8px;
+
+    background: #20283d;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+
+    width: 0;
+
+    background: #00eaff;
+
+    border-radius: 10px;
+
+    animation: progressAnimation 2s forwards;
+}
+
+.html {
+    width: 90%;
+}
+
+.css {
+    width: 85%;
+}
+
+.javascript {
+    width: 70%;
+}
+
+
+/* =========================
+   PROJECT
+========================= */
+
+.projects {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.project-card {
+    padding: 35px;
+
+    background: #101729;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.4s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    background: #00eaff;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0;
+
+    transition: 0.4s;
+}
+
+.project-card:hover::before {
+    opacity: 0.2;
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+
+    border-color: #00eaff;
+}
+
+.project-icon {
+    font-size: 55px;
+
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #b7bfd6;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.project-btn {
+    color: #00eaff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 10px;
+
+    background: #101729;
+
+    color: white;
+
+    font-size: 16px;
+
+    border: 1px solid transparent;
+
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #00eaff;
+
+    box-shadow: 0 0 15px rgba(0,234,255,0.2);
+}
+
+button {
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #00eaff;
+
+    color: #061018;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.03);
+
+    box-shadow: 0 0 25px rgba(0,234,255,0.5);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #8c96ad;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes slideLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes slideRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+}
+
+@keyframes typing {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+
+}
+
+@keyframes blink {
+
+    50% {
+        border-color: transparent;
+    }
+
+}
+
+@keyframes progressAnimation {
+
+    from {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    to {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .nav-menu {
+        gap: 12px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 130px;
+    }
+
+    .hero-text > p:not(.welcome) {
+        margin: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .person {
+        font-size: 110px;
+    }
+
+    .about-box {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .skills,
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .navbar {
+        width: 95%;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-menu {
+        gap: 8px;
+    }
+
+    .nav-menu a {
+        font-size: 11px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+}
